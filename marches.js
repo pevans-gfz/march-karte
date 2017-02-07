@@ -25,7 +25,7 @@ function makePopupHTML(feature) {
 	    str = feature.id;
 	}
 	if (props.description) {
-		str = props.description;
+		str = '<b>' + props.description + '</b>';
 	}
 	/* we prefer description over id, but take the latter if that's all. */
 	if (props.status) {
@@ -38,7 +38,7 @@ function makePopupHTML(feature) {
 		str = str + '<br>Link: <a href="' + props.url + '">WWW</a>';
 	}
 	if (props.twitter) {
-		str = str + '<br>Twitter ';
+		str = str + '<br><img alt="Twitter" src="twitter-s.png" height="24" width="24" /> ';
 		var handle = props.twitter;
 		if (handle.substring(0, 1) == '@') {
 			handle = handle.substring(1);
@@ -54,7 +54,7 @@ function makePopupHTML(feature) {
 function onEachFeature(feature, layer) {
         if (feature.properties && feature.properties.twitter) {
 		var str = makePopupHTML(feature);
-		console.log(str);
+		//DEBUG console.log(str);
                 layer.bindPopup(str);
 	}
 } 
@@ -87,7 +87,6 @@ var markers = function(map, data) {
 	};
 	L.geoJSON(data, {
 		pointToLayer: function(feature, latlng) {
-			console.log('pointToLayer');
 			return L.circleMarker(latlng, markerOptions);
 		},
 		onEachFeature: onEachFeature
@@ -97,6 +96,5 @@ var markers = function(map, data) {
 var main = function() {
 	var mymap = initmap();
 	var data = loaddata('marches.json');
-	console.log(data);
 	markers(mymap, data);
 }
