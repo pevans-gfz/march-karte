@@ -1,0 +1,89 @@
+{
+   "type" : "FeatureCollection",
+   "id" : "Marches for Science",
+   "properties" : {
+      "description" : "Map of Marches for Science planned for Germany on Earth Day, 22 April 2017",
+      "url" : "https://sciencemarchger.wordpress.com/auch-in-deiner-stadt",
+      "comment" : "Lat/lon of places are from www.geonames.org",
+      "updated" : "2017-02-06T00:00:00"
+   },
+   "bbox" : [
+      8,
+      44,
+      18,
+      64
+   ],
+   "features" : [
+      {
+         "id" : "DD",
+         "type" : "Feature",
+         "geometry" : {
+            "type" : "Point",
+            "coordinates" : [
+               13.75,
+               51.05
+            ]
+         },
+         "properties" : {
+            "email" : "sciencemarchdresden@gmail.com",
+            "description" : "Science March Dresden",
+            "twitter" : "@ScienceMarchDD",
+	    "status" : "?"
+         },
+	 "name" : "Dresden"
+      },
+      {
+         "id" : "B",
+         "type" : "Feature",
+         "geometry" : {
+            "type" : "Point",
+            "coordinates" : [
+               13.40,
+               52.50
+            ]
+         },
+         "properties" : {
+            "email" : "sciencemarchberlin@gmail.com",
+            "description" : "Science March Berlin",
+            "twitter" : "@ScienceMarchBER",
+            "status" : "?"
+         },
+         "name" : "Berlin"
+      },
+      {
+         "type" : "Feature",
+         "geometry" : {
+            "type" : "Point",
+            "coordinates" : [
+               12.38,
+               51.33
+            ]
+         },
+         "properties" : {
+            "description" : "Science March Leipzig",
+            "url" : "http://www.facebook.com/groups/380839395618168/",
+            "status" : "?"
+         },
+         "id" : "L",
+         "name" : "Leipzig"
+      },
+      {
+         "type" : "Feature",
+         "geometry" : {
+            "type" : "Point",
+            "coordinates" : [
+                8.70,
+               50.12
+            ]
+         },
+         "properties" : {
+            "description" : "Science March Frankfurt am Main",
+            "twitter" : "@ScienceMarchFfm",
+            "url" : "http://www.facebook.com/ScienceMarch-Frankfurt-am-Main-210271869446186",
+            "status" : "?"
+         },
+         "id" : "F",
+         "name" : "Frankfurt"
+      }
+   ]
+}
