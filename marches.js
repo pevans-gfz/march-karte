@@ -29,7 +29,7 @@ function makePopupHTML(feature) {
 	}
 	/* we prefer description over id, but take the latter if that's all. */
 	if (props.status) {
-	    	str = str + ': ' + props.status;
+	    	str = str + '<br>' + props.status;
 	    }
 	if (props.email) {
 		str = str + '<br>E-mail <a href="mailto:' + props.email + '">' + props.email + '</a>';
@@ -52,7 +52,7 @@ function makePopupHTML(feature) {
 }
 
 function onEachFeature(feature, layer) {
-        if (feature.properties && feature.properties.twitter) {
+        if (feature.properties) {
 		var str = makePopupHTML(feature);
 		//DEBUG console.log(str);
                 layer.bindPopup(str);
@@ -85,8 +85,21 @@ var markers = function(map, data) {
 	    opacity: 1,
 	    fillOpacity: 0.8
 	};
+	var markerAufbau = {
+	    radius: 8,
+	    fillColor: "#77789b",
+	    color: "#00789b",
+	    weight: 1,
+	    opacity: 1,
+	    fillOpacity: 0.8
+	};
 	L.geoJSON(data, {
 		pointToLayer: function(feature, latlng) {
+			if (feature.properties && feature.properties.status) {
+			    if (feature.properties.status == "im Aufbau") {
+				return L.circleMarker(latlng, markerAufbau);
+			    }
+			}
 			return L.circleMarker(latlng, markerOptions);
 		},
 		onEachFeature: onEachFeature
